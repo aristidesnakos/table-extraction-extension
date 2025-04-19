@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Table Extractor</title>
+    <style>
+        body {
+            font-family: sans-serif;
+            width: 250px; /* Adjust width as needed */
+            padding: 15px;
+            text-align: center;
+        }
+        button {
+            padding: 10px 15px;
+            margin-top: 10px;
+            cursor: pointer;
+            background-color: #4285F4; /* Google Blue */
+            color: white;
+            border: none;
+            border-radius: 4px;
+            font-size: 14px;
+        }
+        button:hover {
+            background-color: #357ae8;
+        }
+        #status {
+            margin-top: 15px;
+            font-size: 12px;
+            color: #555;
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-size: 14px;
+            text-align: left;
+        }
+        input[type="text"] {
+            width: calc(100% - 12px); /* Account for padding */
+            padding: 5px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+<body>
+    <h3>Extract Table to Sheets</h3>
+    <label for="sheetId">Google Sheet ID:</label>
+    <input type="text" id="sheetId" placeholder="Enter Google Sheet ID">
+
+    <label for="sheetName">Sheet Name (optional):</label>
+    <input type="text" id="sheetName" placeholder="e.g., Sheet1">
+
+    <button id="extractButton">Extract First Table</button>
+    <div id="status"></div>
+
+    <script src="popup.js"></script>
+</body>
+</html>

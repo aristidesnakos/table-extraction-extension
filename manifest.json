@@ -1,0 +1,40 @@
+{
+    "manifest_version": 3,
+    "name": "Table to Google Sheets Extractor",
+    "version": "1.0",
+    "description": "Extracts HTML table data and sends it to Google Sheets.",
+    "permissions": [
+      "activeTab", // Allows interaction with the currently active tab
+      "scripting", // Allows injecting scripts into pages
+      "identity" // Needed for Google OAuth authentication
+    ],
+    "background": {
+      "service_worker": "background.js" // Runs in the background to handle API calls
+    },
+    "action": {
+      "default_popup": "popup.html", // The HTML file for the popup UI
+      "default_icon": { // Optional: Add icons for the extension
+        "16": "images/icon16.png",
+        "48": "images/icon48.png",
+        "128": "images/icon128.png"
+      }
+    },
+    "oauth2": { // Configuration for Google OAuth 2.0
+      "client_id": "YOUR_GOOGLE_CLOUD_OAUTH_CLIENT_ID.apps.googleusercontent.com", // *** REPLACE THIS ***
+      "scopes": [
+        "https://www.googleapis.com/auth/spreadsheets" // Scope required to edit Google Sheets
+      ]
+    },
+    "icons": { // Optional: Icons displayed in Chrome's extension management page
+      "16": "images/icon16.png",
+      "48": "images/icon48.png",
+      "128": "images/icon128.png"
+    },
+    "content_scripts": [
+      {
+        "matches": ["<all_urls>"], // Runs on all websites (can be restricted)
+        "js": ["content.js"] // The script to inject into web pages
+      }
+    ]
+  }
+  
