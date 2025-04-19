@@ -14,9 +14,9 @@
     "action": {
       "default_popup": "popup.html", // The HTML file for the popup UI
       "default_icon": { // Optional: Add icons for the extension
-        "16": "images/icon16.png",
+        "24": "images/icon24.png",
         "48": "images/icon48.png",
-        "128": "images/icon128.png"
+        "96": "images/icon96.png"
       }
     },
     "oauth2": { // Configuration for Google OAuth 2.0
@@ -26,9 +26,9 @@
       ]
     },
     "icons": { // Optional: Icons displayed in Chrome's extension management page
-      "16": "images/icon16.png",
+      "24": "images/icon24.png",
       "48": "images/icon48.png",
-      "128": "images/icon128.png"
+      "96": "images/icon96.png"
     },
     "content_scripts": [
       {
